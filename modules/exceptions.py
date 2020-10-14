@@ -12,3 +12,8 @@ class InvalidAttributeType(Exception):
     def __init__(self, elem = None, type = None):
         self.message = "Attribute {0} has invalid type {1}".format(elem, type)
         super().__init__(self.message)
+
+class NotInLinkedList(Exception):
+    def __init__(self):
+        self.message = "Exception: target node not in linked list."
+        super().__init__(self.message)
