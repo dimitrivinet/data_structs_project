@@ -10,7 +10,7 @@ def create_table(name, table_object):
     return table_object
 
 class Table:
-    # table is ordered dict with {attribute name: tuple of attribute characteristics (type, max length, isPrimaryKey)}
+    # table is ordered dict with {attribute name: list of attribute characteristics (type, max length, isPrimaryKey)}
     def __init__(self, **attributes):
         self.attributes = OrderedDict()
         self.max_index = 0
@@ -19,7 +19,8 @@ class Table:
         for key, value in attributes.items():
             self.attributes[key] = value
             try:
-                self.primary_key = value(3)
+                self.primary_key = value[2]
+                self.primary_key = key
             except:
                 pass
 
@@ -145,11 +146,43 @@ def query(query_str):
         return result
 
 
+def launch_demo():
+    personne = create_table("personne", Table(p_number=[str, 10, "primary_key"], f_name=[str, 50], l_name=[str, 50]))
+    personne.insert("0139474225", "Dimitri", "VINET")
+    personne.insert("0239474225", "Fimitri", "AINET")
+    personne.insert("0339474225", "Aimitri", "BINET")
+    personne.insert("0439474225", "Kimitri", "WINET")
+    personne.insert("0539474225", "Gimitri", "XINET")
+    personne.insert("0639474225", "Gimitri", "HINET")
+
+    print("\nList of members:")
+    print(personne.members)
+    print("===========================================================")
+    print("Indexes:")
+    print(personne.members[1])
+    print(personne.members[7])
+    print("===========================================================")
+    print("Index rebuilding:")
+    print("Deleting members")
+    personne.delete("Gimitri", "f_name")
+    personne.delete(2)
+    print('"Wrong" index: ')
+    print(personne.members)
+    personne.rebuild_all_indexes()
+    print('"Good" index: ')
+    print(personne.members)
+    print("===========================================================")
+    print("Queries:")
+    print(query("from personne select *"))
+    print(query("from personne select f_name"))
+    print(query("from personne select l_name"))
+
+
                 
-            
+launch_demo()
 
-
-personne = create_table("personne", Table(p_number=(str, 10, "primary_key"), f_name=(str, 50), l_name=(str, 50)))
+"""
+personne = create_table("personne", Table(p_number=[str, 10, "primary_key"], f_name=[str, 50], l_name=[str, 50]))
 personne.insert("0139474225", "Dimitri", "VINET")
 personne.insert("0239474225", "Fimitri", "AINET")
 personne.insert("0339474225", "Aimitri", "BINET")
@@ -176,3 +209,4 @@ print(query("from personne select l_name"))
 
 ordinateur = Table(serial_number=(str, 12, "primary_key"), OS=(str, 20), CPU=(str, 15), prix=(int, 10))
 ordinateur.insert("892034983423", "Ubuntu 20.04", "Intel Core i5", 700)
+ """
