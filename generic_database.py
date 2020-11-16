@@ -1,7 +1,9 @@
 
 from collections import OrderedDict
-import numpy as np
+
 import modules
+import numpy as np
+import time
 
 table_list = {}
 
@@ -120,6 +122,7 @@ def query(query_str):
         result = ""
 
         table = table_list.get(selected_table, None)
+        
         if table:
             nodes_infix = []
             try:
@@ -148,6 +151,7 @@ def query(query_str):
 
 def launch_demo():
     personne = create_table("personne", Table(p_number=[str, 10, "primary_key"], f_name=[str, 50], l_name=[str, 50]))
+
     personne.insert("0139474225", "Dimitri", "VINET")
     personne.insert("0239474225", "Fimitri", "AINET")
     personne.insert("0339474225", "Aimitri", "BINET")
@@ -157,13 +161,17 @@ def launch_demo():
 
     print("\nList of members:")
     print(personne.members)
-    print("===========================================================")
+    print("\n===========================================================\n")
+    time.sleep(1)
+
     print("Indexes:")
     print(personne.members[1])
     print(personne.members[7])
-    print("===========================================================")
+    print("\n===========================================================\n")
+    time.sleep(1)
+
     print("Index rebuilding:")
-    print("Deleting members")
+    print("Deleting members...")
     personne.delete("Gimitri", "f_name")
     personne.delete(2)
     print('"Wrong" index: ')
@@ -171,11 +179,13 @@ def launch_demo():
     personne.rebuild_all_indexes()
     print('"Good" index: ')
     print(personne.members)
-    print("===========================================================")
+    print("\n===========================================================\n")
+    time.sleep(1)
+
     print("Queries:")
     print(query("from personne select *"))
-    print(query("from personne select f_name"))
     print(query("from personne select l_name"))
+    print(query("from personne select z_name"))
 
 
                 
