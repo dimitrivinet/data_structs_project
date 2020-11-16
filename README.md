@@ -55,11 +55,17 @@ I use modules to clean up the main script file. The module names are hopefully s
 You can add members with the += operator and search by any attribute with search_cs().
 
 - **generic_database.py**: this is the main python script for this project. The main class is the Table class, which represents a table in a classic database. When you create a Table, it is logged in the table_list variable for later use.
+
 The main data structures for this database are Binary Search Trees. There are n+1 for each table, where n is the number of columns: 1 for storing all the data and one for each column. The column BSTs are called indexed_columns and are stored in a dictionary.
+
 Within this table, one column can be declared as a primary key which can be used for joining tables (not implemented).
+
 When inserting in a table, the attributes for each column are checked against the requirements decided during table creation. If all attributes are good, the member is inserted in the general BST and in the attribute BSTs. If one of them is wrong, the member is not inserted anywhere.
+
 You can delete from a table by index or attribute with the delete() function. To delete by index, leave the "attribute" argument to None, and if you want to delete by attribute, specify its name. A member will always be deleted from all BSTs.
+
 To print the main BST, simply print the members variable of the table. You can print all the other BSTs at once with the prin_indexed_columns() function.
+
 To rebuild the index, use the rebuild_all_indexes() function.
 Finally, to make a query, use the query() function with your query as an argument. The syntax is the same as MySQL.
 
