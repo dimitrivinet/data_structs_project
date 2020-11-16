@@ -28,7 +28,7 @@ This section shows my implementation of queries. It only goes up to a normal FRO
 
 There are three cases shown for this section:
 
-- select with table name and "\*": with MySQL as an example, a SELECT with the "\*" argument returns all the columns of the table.
+- select with table name and \*: with MySQL as an example, a SELECT with the \* argument returns all the columns of the table.
 
 - select with a column name: returns all the values in the specified column, in alphabetical order, with the associated index next to the values.
 
