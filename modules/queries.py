@@ -12,12 +12,12 @@ def query(query_str):
     # print(split_query)
 
     try:
-        if split_query[0] == 'from':
+        if split_query[0].lower() == 'from':
             table = split_query[1]
         else:
             raise InvalidQuery("from")
 
-        if split_query[2] == 'select':
+        if split_query[2].lower() == 'select':
             selection = split_query[3]
         else:
             raise InvalidQuery("select")

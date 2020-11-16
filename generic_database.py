@@ -183,7 +183,7 @@ def launch_demo():
     time.sleep(1)
 
     print("Queries:")
-    print(query("from personne select *"))
+    print(query("FROM personne select *"))
     print(query("from personne select l_name"))
     print(query("from personne select z_name"))
 
