@@ -37,7 +37,13 @@ There are three cases shown for this section:
 
 ## Code structure and explanation:
 
-blablabla
+#### Modules:
+
+I use modules to clean up the main script file. The module names are hopefully self-explanatory but I will explain them with a bit more detail:
+
+- **BST_Node**: Contains the class for the node of a BST. I separated it from the BST file for reusability.
+
+- **DD_BST**: DD_BST means Double Data BST. I named it "Double Data" because it has "sorting data" (the value by which the BST is sorted, a.k.a. the variables) and "other data" (the index). 
 
 
 
