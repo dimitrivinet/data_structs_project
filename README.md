@@ -51,10 +51,10 @@ I use modules to clean up the main script file. The module names are hopefully s
 
 ### Main python scripts:
 
-- **phonebook.py**: phonebook.py is my first draft for a database. It fulfills all the requirements for the first level of the project, but doesn't use the same structure as the generic database. I only used a list for the data structure and the members have fixed types and lengths. 
+**phonebook.py**: phonebook.py is my first draft for a database. It fulfills all the requirements for the first level of the project, but doesn't use the same structure as the generic database. I only used a list for the data structure and the members have fixed types and lengths. 
 You can add members with the += operator and search by any attribute with search_cs().
 
-- **generic_database.py**: this is the main python script for this project. The main class is the Table class, which represents a table in a classic database. When you create a Table, it is logged in the table_list variable for later use.
+**generic_database.py**: this is the main python script for this project. The main class is the Table class, which represents a table in a classic database. When you create a Table, it is logged in the table_list variable for later use.
 
 The main data structures for this database are Binary Search Trees. There are n+1 for each table, where n is the number of columns: 1 for storing all the data and one for each column. The column BSTs are called indexed_columns and are stored in a dictionary.
 
