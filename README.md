@@ -15,9 +15,13 @@ This section shows the contents of the database, which has a general structure: 
 
 ##### Section 2: Indexes
 
-This section shows the use of indexes in looking up data within the database. The results shown come from a search with only an index; an index of 1 returns a member of the "personne" table, and an index of 7 returns None because the database doesn't have a member with an index of 7.
+This section shows the use of indexes in looking up data within the database. The results shown come from a search with only an index; an index of 1 returns a member of the "personne" table, and an index of 7 returns None, because the database doesn't have a member with an index of 7.
 
 ##### Section 3: Index rebuilding
 
+This section shows the rebuilding of indexes and its usefulness. After deleting members (possible with both an attribute value and an index), we show the "wrong" index: there are holes in the index. However, when we rebuild the index, the holes disappear and we can show the "right" index. This also works when we add another member which is sorted in the middle of the other members.
+
 
 ##### Section 4: Queries
+
+This section shows my implementation of queries. It only goes up to a normal FROM *table* SELECT *column*
