@@ -37,13 +37,26 @@ There are three cases shown for this section:
 
 ## Code structure and explanation:
 
-#### Modules:
+#### modules Package:
 
 I use modules to clean up the main script file. The module names are hopefully self-explanatory but I will explain them with a bit more detail:
 
 - **BST_Node**: Contains the class for the node of a BST. I separated it from the BST file for reusability.
 
-- **DD_BST**: DD_BST means Double Data BST. I named it "Double Data" because it has "sorting data" (the value by which the BST is sorted, a.k.a. the variables) and "other data" (the index). 
+- **DD_BST**: DD_BST means Double Data BST. I named it "Double Data" because it has "sorting data" (the value by which the BST is sorted, a.k.a. the variables) and "other data" (the index). It contains the structure for a BST, basic functions and other useful methods for balancing and listing the tree.
+
+- **exceptions**: A custom exceptions module. I tried to make the code as foolproof as possible, but I still tried to make some useful exceptions for my database.
+
+- **queries**: A module for interpreting queries. It decodes the user-provided query string and returns values to be used by the database system.
+
+### Main python scripts:
+
+- **phonebook.py**: phonebook.py is my first draft for a database. It fulfills all the requirements for the first level of the project, but doesn't use the same structure as the generic database. I only used a list for the data structure and the members have fixed types and lengths. 
+You can add members with the += operator and search by any attribute with search_cs().
+
+- **generic_database.py**: 
+
+
 
 
 
