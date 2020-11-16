@@ -15,5 +15,9 @@ This section shows the contents of the database, which has a general structure: 
 
 ##### Section 2: Indexes
 
+This section shows the use of indexes in looking up data within the database. The results shown come from a search with only an index; an index of 1 returns a member of the "personne" table, and an index of 7 returns None because the database doesn't have a member with an index of 7.
 
-##### Section 3: Queries
+##### Section 3: Index rebuilding
+
+
+##### Section 4: Queries
