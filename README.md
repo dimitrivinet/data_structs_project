@@ -24,4 +24,16 @@ This section shows the rebuilding of indexes and its usefulness. After deleting 
 
 ##### Section 4: Queries
 
-This section shows my implementation of queries. It only goes up to a normal FROM *table* SELECT *column*
+This section shows my implementation of queries. It only goes up to a normal FROM *table* SELECT *column*, but you can write the query as if you were in MySQL for example.
+
+There are three cases shown for this section:
+
+- select with table name and "\*": with MySQL as an example, a SELECT with the "\*" argument returns all the columns of the table.
+
+- select with a column name: returns all the values in the specified column, in alphabetical order, with the associated index next to the values.
+
+- select with a wrong column name: returns an error message. Also works for table names.
+
+
+
+
