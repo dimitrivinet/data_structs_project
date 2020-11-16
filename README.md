@@ -64,7 +64,7 @@ When inserting in a table, the attributes for each column are checked against th
 
 You can delete from a table by index or attribute with the delete() function. To delete by index, leave the "attribute" argument to None, and if you want to delete by attribute, specify its name. A member will always be deleted from all BSTs.
 
-To print the main BST, simply print the members variable of the table. You can print all the other BSTs at once with the prin_indexed_columns() function.
+To print the main BST, simply print the members variable of the table. You can print all the other BSTs at once with the print_indexed_columns() function.
 
 To rebuild the index, use the rebuild_all_indexes() function.
 Finally, to make a query, use the query() function with your query as an argument. The syntax is the same as MySQL.
