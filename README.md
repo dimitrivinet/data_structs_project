@@ -35,5 +35,9 @@ There are three cases shown for this section:
 - select with a wrong column name: returns an error message. Also works for table names.
 
 
+## Code structure and explanation:
+
+blablabla
+
 
 
